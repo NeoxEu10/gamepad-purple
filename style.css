@@ -1,0 +1,82 @@
+/* =========================================================
+   PS5 - PURPLE ELECTRIC
+   Custom CSS for Gamepad Viewer
+   ========================================================= */
+
+/* Couleur principale */
+:root {
+    --purple: #9d00ff;
+    --purple-bright: #c84cff;
+    --purple-dark: #5b00a8;
+}
+
+/* Liserés / contours lumineux */
+.ps5 .touchpad,
+.ps5 .touchpad::before,
+.ps5 .body,
+.ps5 .sticks,
+.ps5 .dpad,
+.ps5 .buttons {
+    filter: drop-shadow(0 0 3px rgba(157, 0, 255, 0.75));
+}
+
+/* Effet violet sur les éléments lumineux */
+.ps5 .touchpad::before {
+    background: var(--purple) !important;
+    box-shadow:
+        0 0 5px var(--purple),
+        0 0 12px var(--purple),
+        0 0 22px rgba(157, 0, 255, 0.75);
+}
+
+/* Zone centrale */
+.ps5 .touchpad {
+    box-shadow:
+        inset 0 0 0 2px var(--purple),
+        0 0 7px var(--purple),
+        0 0 18px rgba(157, 0, 255, 0.55);
+}
+
+/* Boutons */
+.ps5 .button {
+    transition:
+        filter 0.08s ease,
+        box-shadow 0.08s ease,
+        background 0.08s ease;
+}
+
+/* Bouton pressé */
+.ps5 .button.pressed {
+    filter:
+        drop-shadow(0 0 4px var(--purple))
+        drop-shadow(0 0 10px var(--purple-bright));
+}
+
+/* Croix directionnelle */
+.ps5 .dpad button.pressed,
+.ps5 .dpad .pressed {
+    filter:
+        drop-shadow(0 0 4px var(--purple))
+        drop-shadow(0 0 10px var(--purple-bright));
+}
+
+/* Sticks */
+.ps5 .stick.pressed,
+.ps5 .stick.active {
+    filter:
+        drop-shadow(0 0 5px var(--purple))
+        drop-shadow(0 0 12px var(--purple));
+}
+
+/* Gâchettes */
+.ps5 .trigger.pressed,
+.ps5 .trigger.active {
+    filter:
+        drop-shadow(0 0 5px var(--purple))
+        drop-shadow(0 0 12px var(--purple));
+}
+
+/* Petit halo général */
+.ps5 {
+    filter: drop-shadow(0 0 2px rgba(157, 0, 255, 0.45));
+}
