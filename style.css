@@ -80,3 +80,67 @@
 .ps5 {
     filter: drop-shadow(0 0 2px rgba(157, 0, 255, 0.45));
 }
+/* =========================================================
+   DYNAMIC PURPLE ELECTRIC EFFECT
+   ========================================================= */
+
+/* Animation du halo général */
+@keyframes purplePulse {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 2px rgba(157, 0, 255, 0.45));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 5px rgba(157, 0, 255, 0.8))
+            drop-shadow(0 0 14px rgba(200, 76, 255, 0.35));
+    }
+}
+
+/* Halo permanent très léger */
+.ps5 {
+    animation: purplePulse 2.5s ease-in-out infinite;
+}
+
+/* Boutons lorsqu'ils sont actifs */
+.ps5 .button.pressed,
+.ps5 .button.active,
+.ps5 button.pressed,
+.ps5 button.active {
+    background: var(--purple-bright) !important;
+
+    filter:
+        drop-shadow(0 0 4px var(--purple))
+        drop-shadow(0 0 10px var(--purple-bright))
+        drop-shadow(0 0 20px var(--purple));
+
+    transform: scale(1.06);
+}
+
+/* D-Pad dynamique */
+.ps5 .dpad .pressed,
+.ps5 .dpad .active,
+.ps5 .dpad button.pressed,
+.ps5 .dpad button.active {
+    filter:
+        drop-shadow(0 0 5px var(--purple))
+        drop-shadow(0 0 12px var(--purple-bright))
+        drop-shadow(0 0 22px var(--purple));
+}
+
+/* Sticks dynamiques */
+.ps5 .stick.pressed,
+.ps5 .stick.active {
+    filter:
+        drop-shadow(0 0 6px var(--purple))
+        drop-shadow(0 0 14px var(--purple-bright));
+}
+
+/* Gâchettes dynamiques */
+.ps5 .trigger.pressed,
+.ps5 .trigger.active {
+    filter:
+        drop-shadow(0 0 6px var(--purple))
+        drop-shadow(0 0 15px var(--purple-bright));
+}
